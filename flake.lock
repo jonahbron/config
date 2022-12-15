@@ -1,0 +1,96 @@
+{
+  "nodes": {
+    "fan-control": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1669548492,
+        "narHash": "sha256-qqPmOEF+r10VGz3izAnHZW6aJk1mOXy9BrpR9FvWSt0=",
+        "owner": "pymumu",
+        "repo": "fan-control-rock5b",
+        "rev": "8419990c6c0f47a3ed0b55255d7e3591cc5fdab9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "pymumu",
+        "repo": "fan-control-rock5b",
+        "type": "github"
+      }
+    },
+    "kernel-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1670360826,
+        "narHash": "sha256-FAhC17ccRoDaQAMfrC5jQocLmA1butFw4VfnxOKLFPE=",
+        "owner": "samueldr",
+        "repo": "linux",
+        "rev": "11125ef30363f574fcccc2354aa9bf0948752eda",
+        "type": "github"
+      },
+      "original": {
+        "owner": "samueldr",
+        "ref": "wip/rock5-bsp-2022-12-06",
+        "repo": "linux",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1671072901,
+        "narHash": "sha256-eyFdLtfxYyZnbJorRiZ2kP2kW4gEU76hLzpZGW9mcZg=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "69ce4fbad877f91d4b9bc4cfedfb0ff1fe5043d5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1656239181,
+        "narHash": "sha256-wW1xRFBn376yGloXZ4QzBE4hjipMawpV18Lshd9QSPw=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "f2537a505d45c31fe5d9c27ea9829b6f4c4e6ac5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "f2537a505d45c31fe5d9c27ea9829b6f4c4e6ac5",
+        "type": "github"
+      }
+    },
+    "rock5b-nixos": {
+      "inputs": {
+        "fan-control": "fan-control",
+        "kernel-src": "kernel-src",
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1670677952,
+        "narHash": "sha256-YXwBUvU+JevvTyg6IZcA5Fg7c52w3YyN9q3AEvPu6CY=",
+        "owner": "aciceri",
+        "repo": "rock5b-nixos",
+        "rev": "a42df06aced43bd47583f8cdb04d6c7e93ceeeed",
+        "type": "github"
+      },
+      "original": {
+        "owner": "aciceri",
+        "repo": "rock5b-nixos",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "nixpkgs": "nixpkgs",
+        "rock5b-nixos": "rock5b-nixos"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
