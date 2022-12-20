@@ -6,7 +6,7 @@
   boot.initrd.availableKernelModules = ["usbhid"];
   boot.initrd.kernelModules = [];
   boot.kernelModules = [];
-  boot.extraModulePackage = [];
+  boot.extraModulePackages = [];
   
   fileSystems."/boot/" = {
     device = "/dev/disk/by-uuid/3BCD-BDE8";
