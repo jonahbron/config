@@ -16,6 +16,18 @@
         modules = [
 	  rock5b-nixos.nixosModules.kernel
 	];
+        fileSystems."/boot/" = {
+          device = "/dev/mmcblk0p2";
+          fsType = "ext4";
+        };
+        fileSystems."/" = {
+          device = "/dev/mmcblk0p3";
+          fsType = "ext4";
+        };
+        users.users.root = {
+          initialPassword = "root";
+        }
+	services.openssh.enable = true;
       };
     };
   };
