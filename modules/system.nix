@@ -7,6 +7,8 @@
   boot.initrd.kernelModules = [];
   boot.kernelModules = [];
   boot.extraModulePackages = [];
+
+  system.stateVersion = "23.05";
   
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/3BCD-BDE8";
@@ -18,6 +20,7 @@
   };
   swapDevices = [];
   networking.useDHCP = lib.mkDefault true;
+  networking.hostName = "box";
   nixpkgs.hostPlatform = lib.mkDefault "aarch64-linux";
   powerManagement.cpuFreqGovernor = lib.mkDefault "ondemand";
   hardware.video.hidpi.enable = lib.mkDefault true;
