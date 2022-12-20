@@ -8,7 +8,7 @@
   boot.kernelModules = [];
   boot.extraModulePackages = [];
   
-  fileSystems."/boot/" = {
+  fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/3BCD-BDE8";
     fsType = "ext4";
   };
