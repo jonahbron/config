@@ -21,8 +21,6 @@
   nixpkgs.hostPlatform = lib.mkDefault "aarch64-linux";
   powerManagement.cpuFreqGovernor = lib.mkDefault "ondemand";
   hardware.video.hidpi.enable = lib.mkDefault true;
-  users.users.root = {
-    initialPassword = "root";
-  }
+  users.users.root.initialPassword = "root";
   services.openssh.enable = true;
 }
