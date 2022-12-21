@@ -3,7 +3,7 @@
   boot.loader.grub.enable = false;
   boot.loader.generic-extlinux-compatible.enable = true;
   
-  boot.initrd.availableKernelModules = ["usbhid"];
+  boot.initrd.availableKernelModules = ["sata_nv" "usbhid"];
   boot.initrd.kernelModules = [];
   boot.kernelModules = [];
   boot.extraModulePackages = [];
