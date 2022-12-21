@@ -1,4 +1,4 @@
-{ confsig, lib, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 {
   boot.loader.grub.enable = false;
   boot.loader.generic-extlinux-compatible.enable = true;
@@ -8,22 +8,21 @@
   boot.kernelModules = [];
   boot.extraModulePackages = [];
 
-  system.stateVersion = "23.05";
+  system.stateVersion = lib.traceSeq config.boot.initrd.availableKernelModules "23.05";
   
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/3BCD-BDE8";
-    fsType = "ext4";
-  };
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/a8d4ac6c-7fd7-47d5-9ce3-c9cd2361acc0b";
+    device = "/dev/disk/by-label/NIXOS_ROOTFS";
     fsType = "ext4";
   };
   swapDevices = [];
-  networking.useDHCP = lib.mkDefault true;
-  networking.hostName = "box";
-  nixpkgs.hostPlatform = lib.mkDefault "aarch64-linux";
+  networking = {
+    hostName = "rock5b";
+    useDHCP = false;
+    interfaces.wlan0.useDHCP = true;
+    networkmanager.enable = true;
+  };
   powerManagement.cpuFreqGovernor = lib.mkDefault "ondemand";
-  hardware.video.hidpi.enable = lib.mkDefault true;
   users.users.root.initialPassword = "root";
   services.openssh.enable = true;
+  services.openssh.permitRootLogin = "yes";
 }

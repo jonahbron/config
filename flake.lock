@@ -19,17 +19,16 @@
     "kernel-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1670360826,
-        "narHash": "sha256-FAhC17ccRoDaQAMfrC5jQocLmA1butFw4VfnxOKLFPE=",
-        "owner": "samueldr",
-        "repo": "linux",
-        "rev": "11125ef30363f574fcccc2354aa9bf0948752eda",
+        "lastModified": 1670395302,
+        "narHash": "sha256-IZdeXSvGips2OPTwXljGPTeR2Kpx70NGQGF0Cd9xa+0=",
+        "owner": "radxa",
+        "repo": "kernel",
+        "rev": "ca15bbe36e6c087c96a603db7cc491a01d9a6467",
         "type": "github"
       },
       "original": {
-        "owner": "samueldr",
-        "ref": "wip/rock5-bsp-2022-12-06",
-        "repo": "linux",
+        "owner": "radxa",
+        "repo": "kernel",
         "type": "github"
       }
     },
@@ -49,34 +48,18 @@
         "type": "github"
       }
     },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 1656239181,
-        "narHash": "sha256-wW1xRFBn376yGloXZ4QzBE4hjipMawpV18Lshd9QSPw=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "f2537a505d45c31fe5d9c27ea9829b6f4c4e6ac5",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "f2537a505d45c31fe5d9c27ea9829b6f4c4e6ac5",
-        "type": "github"
-      }
-    },
     "rock5b-nixos": {
       "inputs": {
         "fan-control": "fan-control",
         "kernel-src": "kernel-src",
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1670677952,
-        "narHash": "sha256-YXwBUvU+JevvTyg6IZcA5Fg7c52w3YyN9q3AEvPu6CY=",
+        "lastModified": 1671482997,
+        "narHash": "sha256-x9On6ffAWsSlGHujXny98tgyjSZs4WyoCQK/vJSWeU8=",
         "owner": "aciceri",
         "repo": "rock5b-nixos",
-        "rev": "a42df06aced43bd47583f8cdb04d6c7e93ceeeed",
+        "rev": "ca246ccb75a1669b4f78032eac910abd978d2a23",
         "type": "github"
       },
       "original": {
@@ -87,7 +70,10 @@
     },
     "root": {
       "inputs": {
-        "nixpkgs": "nixpkgs",
+        "nixpkgs": [
+          "rock5b-nixos",
+          "nixpkgs"
+        ],
         "rock5b-nixos": "rock5b-nixos"
       }
     }
