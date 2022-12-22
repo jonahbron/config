@@ -11,8 +11,11 @@
   system.stateVersion = lib.traceSeq config.boot.initrd.availableKernelModules "23.05";
   
   fileSystems."/" = {
-    device = "/dev/disk/by-label/NIXOS_ROOTFS";
+    device = "/dev/disk/by-partlabel/nixos";
     fsType = "ext4";
+  };
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-partlabel/boot";
   };
   swapDevices = [];
   networking = {
