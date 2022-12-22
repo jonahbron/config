@@ -24,7 +24,8 @@
     networkmanager.enable = true;
   };
   powerManagement.cpuFreqGovernor = lib.mkDefault "ondemand";
-  users.users.root.initialPassword = "root";
+  # Root password will be prompted from the user upon nixos-install
+  users.users.root = {};
   services.openssh.enable = true;
   services.openssh.permitRootLogin = "yes";
 }
