@@ -18,7 +18,6 @@
   networking = {
     hostName = "rock5b";
     useDHCP = false;
-    interfaces.wlan0.useDHCP = true;
     networkmanager.enable = true;
   };
   powerManagement.cpuFreqGovernor = lib.mkDefault "ondemand";
